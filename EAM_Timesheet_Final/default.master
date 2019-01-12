@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="default.master.cs" Inherits="_default" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>EAM Timesheet Management System</title>
+<link href="Styles/style.css" rel="stylesheet" type="text/css" />
+
+
+<script language="javascript" type="text/javascript" src="Scripts/datetimepicker.js"></script>
+    <style type="text/css">
+        .hideSkiplink
+        {
+            text-align: right;
+        }
+    </style>
+</head>
+<body class="post_background" >
+<form id="frmMain" runat="server" >
+<div id="container_wrapper">
+	<div class="spacer"></div>
+<div id="container">
+<div id="top" class="post_background"><asp:Label ID="lblHeaderMessage" runat="server" class="link"></asp:Label>, 
+    <asp:LinkButton ID="lnkLogout" runat="server" OnClick="lnkLogout_Click">Logout</asp:LinkButton></div>
+ 
+  <div id="header" class="spacer">
+      <div id="inner_header">
+        <div id="site_title">EAM Timesheet Management System </div>
+         <div class="text_area" align="center">
+      <img src="images/iv-logo.jpg" />
+        </div>
+         <%-- <div id="site_slogan">Version 1.0</div>--%>
+      </div>
+      
+  </div>
+ <br /><br />
+  <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                       
+                        <asp:MenuItem NavigateUrl="~/Reports1.aspx" Text="Reports"/>
+                        
+                    </Items>
+                </asp:Menu>
+                </div>
+  
+    <div id="left_column">
+ 		<div class="text_area" align="justify">
+        <asp:ContentPlaceHolder runat="server" ID="cphMain">
+        </asp:ContentPlaceHolder>   
+        </div>
+         
+      </div>
+	
+    <div id="right_column">
+        <asp:ContentPlaceHolder runat="server" ID="cphRight">
+        </asp:ContentPlaceHolder>
+    </div>
+    <div id="footer">
+    Designed and Developed by <a href="http://www.InfoVentures.com" target="_blank">IVQ</a>
+    </div>
+</div>
+<div class="spacer"></div>
+</div>
+</form>
+</body>
+</html>
